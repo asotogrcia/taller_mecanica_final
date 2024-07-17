@@ -1,0 +1,392 @@
+--root {
+    --primary-color: #b21818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #b21818;
+    color: #ffffff;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-item {
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #ffffff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #b21818;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+*/
+
+input, textarea, button {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #b21818;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #a21616;
+    transform: scale(1.05);
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.day {
+    background-color: #f4f4f4;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day .solicitud {
+    background-color: #b21818;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+#month-selector {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#month-selector button {
+    background-color: #b21818;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#month-selector button:hover {
+    background-color: #a21616;
+    transform: scale(1.05);
+}
+
+#month-selector span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.formSolicitud {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#labelMarca, 
+#labelModelo, 
+#labelPatente, 
+#labelVin, 
+#labelFecha, 
+#labelHora, 
+#labelAsignatura, 
+#labelDocente, 
+#labelCombustible, 
+#labelFoto {
+    background-color: #b21818;
+    text-align: center;
+    color: #f4f4f4;
+    width: auto;
+    height: 100%;
+    border-radius: 10px;
+    font-size: larger;
+    padding-top: 10px;
+}
+
+#inputMarca,
+#inputModelo,
+#inputPatente,
+#inputVin,
+#inputFecha,
+#inputHora,
+#selectAsignatura,
+#selectDocentes,
+#selectCombustible,
+#inputFotografia {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: larger;
+}
+
+#labelMarca {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+#inputMarca {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#labelModelo {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+#inputModelo {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+#labelPatente {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#inputPatente {
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+#labelVin  {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+#inputVin {
+    grid-column: 2/5;
+    grid-row: 3/4;
+}
+
+#labelCombustible {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+
+#selectCombustible {
+    grid-column: 2/3;
+    grid-row: 6/7;
+}
+
+#labelFoto {
+    grid-column: 3/4;
+    grid-row: 6/7;
+}
+
+#inputFoto {
+    grid-column: 4/5;
+    grid-row: 6/7;
+}
+
+#button-submit {
+    grid-column: 2/4;
+    grid-row: 9/10;
+    margin: 0 120px;
+    margin-top: 10px;
+}
+
+select option {
+    font-size: 20px;
+}
+
+/* CSS MODAL */
+#openModalBtn {
+    grid-column: 2/4;
+    grid-row: 7/8;
+    margin: 0 120px;
+    margin-top: 10px;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.seating-chart {
+    display: flex;
+    grid-template-columns: repeat(5, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.space, .nullSpace {
+    width: 100px;
+    height: 60px;
+    background-color: #ddd;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.nullSpace {
+    width: fit-content;
+    padding: 0 10px;
+}
+
+.space.selected {
+    background-color: #bd1212;
+    color: #fff;
+}
+
+#selectedSpaces {
+    grid-column: 2/4;
+    grid-row: 8/9;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: var(--white-color);
+}

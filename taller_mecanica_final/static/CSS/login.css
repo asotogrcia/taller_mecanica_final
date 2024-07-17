@@ -1,0 +1,120 @@
+:root {
+    --color-principal: #b21818;
+}
+/*CSS GLOBAL*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* CSS BACKGROUND CARRUSEL */
+#background-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el div sin distorsionarse */
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.background-image.active {
+    opacity: 0.5; /* Opacidad para el sombreado, ajustar según necesidad */
+}
+
+/* CSS FORMULARIOS */
+#form-container {
+    width: 380px;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+    background: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+}
+
+#form-container h2 {
+    margin: 0;
+}
+
+.form {
+    display: block;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=date] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+span {
+    color: var(--color-principal);
+    cursor: pointer;
+}
+
+#title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo-index {
+    margin-top: -0.5rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+#logo-inacap {
+    width: auto;
+    height: auto;
+}
+

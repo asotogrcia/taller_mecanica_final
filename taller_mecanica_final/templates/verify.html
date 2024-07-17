@@ -1,0 +1,25 @@
+{% extends "layouts/base_login.html" %}
+{% load static %}
+
+{% block title %} Verificación {% endblock title %}
+
+{% block content %}
+    <div id="form-container">
+        {% include "layouts/partials/_header.html" %}
+        {% comment "Verify" %} Formulario Verify {% endcomment %}
+        <form id="verify-form" class="form" method="post">
+            <h2>Verificar Cuenta</h2>
+            {% csrf_token %}
+            {{ verify_form }}
+            <button type="submit" name="validate" >Verificar Cuenta</button>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'JS/login.js' %}"></script>
+{% endblock scripts %}
+
+
+

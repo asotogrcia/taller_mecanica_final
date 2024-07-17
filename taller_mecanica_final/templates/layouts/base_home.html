@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="menu">
+                {% block nav_content %}{% endblock %}
+            </div>
+            <div class="profile">
+                <img src=" {% static 'IMG/ProfileIMG.png' %} " alt="ProfileImage" class="profile-img">
+                <div class="menu-item" id="mi-perfil">Mi Perfil</div>
+                <div class="menu-item" id="politicas">
+                    <a href="{% static 'DOCS/Terminos_Condiciones.pdf' %}" target="_blank">Terminos y Condiciones</a>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
+    {% block scripts %}{% endblock %}
+    <script src="{% static 'JS/general_scripts.js' %}"></script>
+</body>
+</html>

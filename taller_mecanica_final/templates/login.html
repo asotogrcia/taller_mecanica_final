@@ -1,0 +1,23 @@
+{% extends "layouts/base_login.html" %}
+{% load static %}
+
+{% block title %} Login Site {% endblock title %}
+
+{% block content %}
+    <div id="form-container">
+        {% include "layouts/partials/_header.html" %}
+        {% comment "LogIn" %} Formulario Log In {% endcomment %}
+        <form id="login-form" class="form" method="post">
+            <h2>Iniciar Sesión</h2>
+            {% csrf_token %}
+            {{ login_form }}
+            <button type="submit" name="login" >Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <span id="register-span" onclick="toggleRegister()">Crea una cuenta nueva</span></p>
+        </form>
+        <div id="responseMessage"></div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'JS/login.js' %}"></script>
+{% endblock scripts %}
